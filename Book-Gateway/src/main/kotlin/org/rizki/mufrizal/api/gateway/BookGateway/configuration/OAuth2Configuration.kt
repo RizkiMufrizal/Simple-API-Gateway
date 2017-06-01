@@ -38,7 +38,7 @@ open class OAuth2Configuration {
         override fun configure(httpSecurity: HttpSecurity?) {
             httpSecurity
                     ?.authorizeRequests()
-                    ?.antMatchers("/**")
+                    ?.antMatchers("/api/**")
                     ?.fullyAuthenticated()
                     ?.and()
                     ?.addFilterBefore(CorsConfiguration(), ChannelProcessingFilter::class.java)
