@@ -1,0 +1,35 @@
+# konfigurasi oauth2 di spring 1.5.1
+security:
+    oauth2:
+        resource:
+            filter-order: 3
+
+spring:
+    profiles:
+        active: development
+
+    #konfigurasi redis
+    redis:
+        host: 127.0.0.1
+        port: 6379
+        max-total: 128
+        max-idle: 128
+        min-idle: 16
+        min-evictable-idle-time-millis: 60
+        time-between-eviction-runs-millis : 30
+        block-when-exhausted : true
+        use-pool: true
+
+    # jackson config
+    jackson:
+        serialization:
+            indent_output: true
+server:
+    port: 8080
+
+ping-server:
+    ribbon:
+      eureka:
+          enabled: false
+      listOfServers: localhost:8081,localhost:8082
+      ServerListRefreshInterval: 15000
