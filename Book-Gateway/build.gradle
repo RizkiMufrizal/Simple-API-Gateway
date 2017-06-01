@@ -36,6 +36,7 @@ ext {
 }
 
 dependencies {
+    compile('org.springframework.cloud:spring-cloud-starter-zuul')
     compile('org.springframework.cloud:spring-cloud-starter-hystrix')
     compile('org.springframework.cloud:spring-cloud-starter-ribbon')
     compile('org.springframework.boot:spring-boot-starter-security')
