@@ -33,3 +33,12 @@ ping-server:
           enabled: false
       listOfServers: localhost:8081,localhost:8082
       ServerListRefreshInterval: 15000
+zuul:
+  routes:
+    authentications:
+      path: /**
+      url: http://localhost:8083/
+
+ribbon:
+  eureka:
+    enabled: false
