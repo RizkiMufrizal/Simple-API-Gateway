@@ -1,0 +1,50 @@
+# konfigurasi oauth2 di spring 1.5.1
+security:
+    oauth2:
+        resource:
+            filter-order: 3
+
+spring:
+
+    #konfigurasi redis
+    redis:
+        host: 127.0.0.1
+        port: 6379
+        max-total: 128
+        max-idle: 128
+        min-idle: 16
+        min-evictable-idle-time-millis: 60
+        time-between-eviction-runs-millis: 30
+        block-when-exhausted: true
+        use-pool: true
+
+    #konfigurasi jackson
+    jackson:
+        serialization:
+            indent-output: true
+
+    # spring datasource jpa
+    datasource:
+        driver-class-name: org.mariadb.jdbc.Driver
+        url: jdbc:mariadb://127.0.0.1:3306/database_book?autoReconnect=true
+        username: root
+        password:
+        poolName: SpringBootHikariCP
+        maximumPoolSize: 5
+        minimumIdle: 3
+        maxLifetime: 2000000
+        connectionTimeout: 30000
+        idleTimeout: 30000
+
+    # spring hibernate
+    jpa:
+        generate-ddl: true
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                format_sql: true
+
+server:
+  port: 8083
