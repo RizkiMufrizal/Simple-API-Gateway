@@ -19,7 +19,7 @@ Untuk mendapatkan token, silahkan jalankan perintah berikut :
 
 ```bash
 curl -X POST -vu CLIENT_ID_PASSWORD:CLIENT_SECRET_PASSWORD \
-http://localhost:8083/oauth/token \
+http://localhost:8080/oauth/token \
 -H "Accept: application/json" \
 -d "password=mufrizal&username=rizki&grant_type=password&client_secret=CLIENT_SECRET_PASSWORD&client_id=CLIENT_ID_PASSWORD"
 ```
