@@ -106,3 +106,20 @@ Jika Berhasil maka akan muncul output seperti berikut :
   ]
 }
 ```
+
+Jika client id tidak memiliki hak akses untuk resource tertentu maka akan ditolak, silahkan jalankan perintah berikut :
+
+```bash
+curl "http://localhost:8081/api/books" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiUkVTT1VSQ0VfSURfR0FURVdBWSJdLCJ1c2VyX25hbWUiOiJyaXpraSIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE0OTYzMDcyOTIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiI2OWJkMzY0YS0wODJiLTQ0ZGItOWQzYS01ZTBlODQyZjYwNDUiLCJjbGllbnRfaWQiOiJDTElFTlRfSURfUEFTU1dPUkQifQ.ultPrI5PQNWxPChfL4G7Ja0NhvJcjWnXWYOgts9HLXQ" \
+  -H "Content-Type: application/json"
+```
+
+Karena tidak memiliki akses suatu resource maka akan muncul output seperti berikut.
+
+```json
+{
+  "error":"access_denied",
+  "error_description":"Invalid token does not contain resource id (RESOURCE_ID_BOOK)"
+}
+```
